@@ -9,6 +9,6 @@ describe service('ntp') do
 end
 
 describe file('/etc/ntp.conf') do
-  it { should contain '0.pool.ntp.org' }
-  it { should contain '1.pool.ntp.org' }
+  it { should contain 'no-server-2.pool.ntp.org' }
+  it { should contain 'no-server-1.pool.ntp.org' }
 end
