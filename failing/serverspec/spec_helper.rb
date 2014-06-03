@@ -36,7 +36,7 @@ if ENV['STANDALONE_SPEC']
     end
 
     c.host  = ENV['TARGET_HOST']
-    options = Net::SSH::Config.for(c.host)
+    options.merge(Net::SSH::Config.for(c.host))
     c.ssh   = Net::SSH.start(c.host, user, options)
     c.os    = backend.check_os
 
